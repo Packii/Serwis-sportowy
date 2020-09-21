@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Player } from './../../models/player.interface';
+import { Component, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-player',
@@ -6,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent implements OnInit {
+  ngOnInit(): void { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+ 
+  player: Player;
 
 }

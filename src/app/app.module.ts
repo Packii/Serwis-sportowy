@@ -1,3 +1,5 @@
+import { Player } from './models/player.interface';
+import { PlayersComponent } from './views/players/players.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,6 +10,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ScoreTableComponent } from './components/score-table/score-table.component';
 import { PlayerComponent } from './components/player/player.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,14 @@ import { PlayerComponent } from './components/player/player.component';
     PageNotFoundComponent,
     NavbarComponent,
     ScoreTableComponent,
-    PlayerComponent
+    PlayerComponent,
+    PlayersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
