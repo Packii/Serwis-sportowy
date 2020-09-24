@@ -3,23 +3,19 @@
 
 
   <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            [routerLink]="['/players']"
-            [routerLinkActive]="['active']"
-            >Players
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            [routerLink]="['/score-table-container']"
-            [routerLinkActive]="['active']"
-            >Scores
-          </a>
-        </li>
-      </ul>
-    </div>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/players']" [routerLinkActive]="['active']">Players
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/score-table-container']" [routerLinkActive]="['active']">Scores
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/teams']" [routerLinkActive]="['active']">Teams
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>
