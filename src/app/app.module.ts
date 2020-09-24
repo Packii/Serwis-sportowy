@@ -1,3 +1,5 @@
+import { Player } from './models/player.interface';
+import { PlayersComponent } from './views/players/players.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,6 +18,7 @@ import { ScoresComponent } from './views/scores/scores.component';
 
 
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,15 +26,16 @@ import { ScoresComponent } from './views/scores/scores.component';
     PageNotFoundComponent,
     NavbarComponent,
     ScoreComponent,
+    ScoresComponent,
     PlayerComponent,
-    ScoresComponent
+    PlayersComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

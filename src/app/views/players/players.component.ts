@@ -1,4 +1,8 @@
+import { PlayersApiService } from './../../services/players-api.service';
+import { Player } from './../../models/player.interface';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-players',
@@ -6,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
+  players: Observable<Player[]>;
 
-  constructor() { }
+  constructor(
+    private playersApiService: PlayersApiService
+  ) { }
 
   ngOnInit(): void {
+    this.players = this.playersApiService.getPlayers();
   }
 
 }
