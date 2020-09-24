@@ -1,7 +1,10 @@
+
 import { Player } from './models/player.interface';
 import { PlayersComponent } from './views/players/players.component';
+import { TeamsComponent } from './views/teams/teams.component'
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +22,7 @@ import { ScoresComponent } from './views/scores/scores.component';
 
 
 import { HttpClientModule } from '@angular/common/http';
+import { TeamComponent } from './components/team/team.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
     ScoresComponent,
     PlayerComponent,
     PlayersComponent,
+    TeamComponent,
+    TeamsComponent
+
   ],
   imports: [
     CommonModule,

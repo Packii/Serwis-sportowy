@@ -4,12 +4,11 @@ import { CommonModule } from '@angular/common';
 import { NewsComponent } from './news/news.component';
 import { ScoresComponent } from './scores/scores.component';
 import { PlayersComponent } from './players/players.component';
-import { ObjngforPipe } from './scores/objngfor.pipe';
-
+import { TeamsComponent } from './teams/teams.component';
 
 
 @NgModule({
-  declarations: [PageNotFoundComponent, NewsComponent, ScoresComponent, PlayersComponent, ObjngforPipe],
+  declarations: [PageNotFoundComponent, NewsComponent, ScoresComponent, PlayersComponent, TeamsComponent],
   exports: [PageNotFoundComponent],
   imports: [
     CommonModule
