@@ -1,23 +1,18 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-  <a class="navbar-brand">Team-2</a>
-
-  <div class="collapse navbar-collapse" id="navbarColor02">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/news']" [routerLinkActive]="['active']">News
-        </a>
+<nav navbar sticky-top>
+  <a id="logo">asd</a>
+  <div>
+    <ul class="d-flex flex-row">
+      <li class="flex-fill">
+        <a [routerLink]="['/news']" [routerLinkActive]="['active']">News</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/scores']" [routerLinkActive]="['active']">Recent Matches
-        </a>
+      <li class="flex-fill">
+        <a [routerLink]="['/scores']" [routerLinkActive]="['active']">Recent Matches</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/players']" [routerLinkActive]="['active']">Players
-        </a>
+      <li class="flex-fill">
+        <a [routerLink]="['/players']" [routerLinkActive]="['active']">Players</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/teams']" [routerLinkActive]="['active']">Teams
-        </a>
+      <li class="flex-fill">
+        <a [routerLink]="['/teams']" [routerLinkActive]="['active']">Teams</a>
       </li>
     </ul>
   </div>

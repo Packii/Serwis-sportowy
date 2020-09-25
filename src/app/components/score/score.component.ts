@@ -11,4 +11,8 @@ export class ScoreComponent {
   @Input()
   score: MatchScore;
 
+  hover() {
+
+  }
+
 }

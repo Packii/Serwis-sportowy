@@ -1,16 +1,16 @@
-import { Teamsforscores } from './teamsforscores';
+import { Team } from './Team';
 
 export interface MatchScore {
 
     id: number;
     date: string;
-    home_team: Teamsforscores;
+    home_team: Team;
     home_team_score: number;
     period: number;
     postseason: boolean;
     season: number;
     status: string;
     time: string;
-    visitor_team: Teamsforscores;
+    visitor_team: Team;
     visitor_team_score: number;
 }

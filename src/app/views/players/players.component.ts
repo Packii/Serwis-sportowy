@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
-  styleUrls: ['./players.component.scss']
+  styleUrls: ['./players.component.scss'],
 })
 export class PlayersComponent implements OnInit {
   players: Observable<Player[]>;
@@ -16,8 +16,7 @@ export class PlayersComponent implements OnInit {
     private playersApiService: PlayersApiService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.players = this.playersApiService.getPlayers();
   }
-
 }

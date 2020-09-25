@@ -8,16 +8,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TeamApiService {
 
-  url = './../../assets/data/team.json';
-  teamsArray = [];
+  url = 'https://www.balldontlie.io/api/v1/teams';
+  teamsArray: any;
 
   constructor(private http: HttpClient) { }
 
   getTeams(): Observable<Team[]> {
-    return this.http.get<Team[]>(this.url);
+    this.http.get<Team[]>(this.url).toPromise().then(data => {
+      this.teamsArray = Object.values(data)[0]
+    });
+    return this.teamsArray;
   };
-
-  getTeam(id: number): Observable<Team[]> {
-    return this.http.get<Team[]>(`${this.url}/${id}`)
-  }
 }

@@ -1,4 +1,4 @@
-import { PlayerTeam } from './player-team';
+import { Team } from './team';
 
 export interface Player {
     id: number;
@@ -7,5 +7,5 @@ export interface Player {
     height_feet: number;
     height_inch: number;
     weight_pounds: number;
-    team: PlayerTeam;
+    team: Team;
 }

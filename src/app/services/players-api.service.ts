@@ -8,32 +8,22 @@ import { HttpClient } from '@angular/common/http'
 })
 export class PlayersApiService {
 
-  
-  // url = `https://www.balldontlie.io/api/v1/players`;
-  url = './../assets/data/players.json';
-  playersArray = [];
 
-  constructor(private http: HttpClient) { 
-    // this.http.get(this.url).toPromise().then(data => {
-      
-    //   for (let key in data)
-    //     if (data.hasOwnProperty(key))
-    //       this.playersArray.push(data[key]);
+  url = `https://www.balldontlie.io/api/v1/players`;
+  playersArray: any;
 
-    //       console.log(this.playersArray);
-    //     let Players: [] = this.playersArray[0];
-    //     console.log(Players);
-    // });
-  }
+  constructor(private http: HttpClient) { }
 
-  
+
+  // getPlayers(): Observable<Player[]> {
+  //   this.http.get<Player[]>(this.url).toPromise().then(data => {
+  //     this.playersArray = Object.values(data)[0];
+  //   });
+  //   return this.playersArray
+  // };
+
   getPlayers(): Observable<Player[]> {
-      return this.http.get<Player[]>(this.url);
-    
-  };
-
-  getPlayer(id: number): Observable<Player[]> {
-    return this.http.get<Player[]>(`${this.url}/${id}`);
+    return this.http.get<Player[]>(this.url).pipe(Map(res => res[0]))
   }
-  
-}
+};
+

@@ -12,8 +12,6 @@ import { Component, OnInit } from '@angular/core';
 export class ScoresComponent implements OnInit {
   scores: Observable<MatchScore[]>;
 
-  arrayData: any;
-
   constructor(
     private scoresApiService: ScoresApiService,
   ) { }
