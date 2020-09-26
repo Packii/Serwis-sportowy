@@ -1,3 +1,4 @@
+
 import { Player } from '../models/player.interface';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -29,5 +30,3 @@ export class PlayersApiService {
       .pipe(map(res => Object.values(res)[0]));
   }
 }
-
-

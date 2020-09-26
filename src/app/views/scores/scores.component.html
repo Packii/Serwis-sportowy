@@ -1,3 +1,4 @@
-<div *ngIf="(scores) as scores">
-  <app-score *ngFor="let score of scores" [score]="score"></app-score>
+<div *ngIf="(scores| async) as scores">
+  <app-score (click)="toggleOpened($event)" *ngFor="let score of scores" [score]="score">
+  </app-score>
 </div>

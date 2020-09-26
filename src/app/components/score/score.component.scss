@@ -1,28 +1,57 @@
-div.container {
-  margin: 0 auto;
-  // height: 200px;
-  width: 100vw;
+@import '../../../mixins.scss';
+@import '../../../variables.scss';
+
+
+
+div {
+  margin: 0 0;
+  display: block;
   z-index: -1;
 
-}
+  div.team {
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    padding: 10px 30px;
+    width: 40%;
+    display: flex;
 
+    &.home {
+      img {
+        margin-right: 20px;
+      }
+    }
 
+    &.visitor {
+      flex-direction: row-reverse;
 
-div.col {
-  border-bottom: 1px solid grey;
-  border-top: 1px solid grey;
-  padding: 20px 0;
+      div {
+        flex-direction: row-reverse;
+      }
 
-  &.visitor {
-    text-align: right;
-    margin-left: 170px;
+      img {
+        margin-left: 20px;
+
+      }
+    }
+
+    img {
+      display: inline-block;
+      border-radius: 50%;
+      border: 1px solid $primary-color;
+      box-shadow: 0 0 6px $primary-color;
+    }
+
+    div {
+      align-self: center;
+      transform: translateY(25%);
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
   }
 
-  &.home {}
-
-  img {
-    border-radius: 50%;
-    border: 1px solid rgba(204, 99, 0, .3);
-    box-shadow: 0 0 4px rgba(204, 99, 0, .7);
+  div.versus {
+    text-align: center;
+    align-self: center;
   }
 }

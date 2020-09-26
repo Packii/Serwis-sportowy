@@ -1,0 +1,15 @@
+app-score {
+  display: block;
+  margin: 1px auto;
+  cursor: pointer;
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.288);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+p {
+  font-size: 10px;
+}

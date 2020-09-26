@@ -1,5 +1,12 @@
+import { Subscription } from 'rxjs';
 import { MatchScore } from './../../models/match-score';
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, OnInit } from '@angular/core';
+import { ScoresApiService } from 'src/app/services/scores-api.service';
+
+
+
+
+
 
 @Component({
   selector: 'app-score',
@@ -10,9 +17,12 @@ export class ScoreComponent {
 
   @Input()
   score: MatchScore;
-
-  hover() {
-
+  isOpened: boolean;
+  subscription: Subscription;
+  constructor(private scoresApiService: ScoresApiService) {
+    this.subscription = this.scoresApiService.getData().subscribe(isOpened => this.isOpened = isOpened);
   }
-
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

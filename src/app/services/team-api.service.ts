@@ -1,3 +1,4 @@
+
 import { Team } from './../models/team';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -16,7 +17,7 @@ export class TeamApiService {
 
   getTeams(): Observable<Team[]> {
     return this.http.get<{ data: Team[], meta: any }>(this.url).pipe(
-      map(data  => Object.values(data)[0])
+      map(res => Object.values(res)[0])
     );
   }
 }
