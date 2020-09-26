@@ -1,0 +1,28 @@
+div.container {
+  margin: 0 auto;
+  // height: 200px;
+  width: 100vw;
+  z-index: -1;
+
+}
+
+
+
+div.col {
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  padding: 20px 0;
+
+  &.visitor {
+    text-align: right;
+    margin-left: 170px;
+  }
+
+  &.home {}
+
+  img {
+    border-radius: 50%;
+    border: 1px solid rgba(204, 99, 0, .3);
+    box-shadow: 0 0 4px rgba(204, 99, 0, .7);
+  }
+}

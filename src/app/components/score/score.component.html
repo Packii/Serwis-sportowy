@@ -1,0 +1,27 @@
+<div class="container col-xl-9">
+  <div class="row">
+    <div class="col home">
+      <section class="row">
+        <section class="col-2">
+          <img src="https://picsum.photos/70?random={{score.home_team.id}}" alt="">
+        </section>
+        <section class="col-10">
+          <p>{{score.home_team.full_name}}</p>
+          <p>{{score.home_team_score}}</p>
+
+        </section>
+      </section>
+    </div>
+    <div class="col visitor">
+      <section class="row">
+        <section class="col-10">
+          <p>{{score.visitor_team.full_name}}</p>
+          <p>{{score.visitor_team_score}}</p>
+        </section>
+        <section class="col-2">
+          <img src="https://picsum.photos/70?random={{score.visitor_team.id}}" alt="">
+        </section>
+      </section>
+    </div>
+  </div>
+</div>

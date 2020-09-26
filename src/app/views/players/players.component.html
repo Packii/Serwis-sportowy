@@ -1,0 +1,13 @@
+<div class="container">
+  <section class="row">
+    <p class="col-1 player">ID</p>
+    <p class="col-2 player">Player</p>
+    <p class="col-1 player">Height</p>
+    <p class="col-1 player">Weight</p>
+    <p class="col-2 player">City</p>
+    <p class="col-2 player">Team</p>
+  </section>
+</div>
+<div *ngIf="(players | async) as players">
+  <app-player *ngFor="let player of players" [player]="player"></app-player>
+</div>

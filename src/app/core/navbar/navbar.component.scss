@@ -1,0 +1,54 @@
+nav {
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  background: black;
+  border-bottom: 1px solid rgba(204, 99, 0, .3);
+
+  a {
+    line-height: 98px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  #logo {
+    padding: 0 50px;
+    transition: .2s;
+
+  }
+
+  div {
+    display: inline-block;
+    min-width: 70%;
+
+    ul {
+
+      li {
+        list-style: none;
+
+        a {
+          display: block;
+          min-width: 100px;
+          transition: 0.4s ease-in-out;
+          border-bottom: 2px solid transparent;
+          font-weight: bold;
+          color: hsl(0, 0%, 70%);
+
+          &:hover {
+            border-bottom: 2px solid hsl(29, 100%, 40%);
+            min-width: 170px;
+            font-size: 30px;
+            color: hsl(0, 0%, 100%)
+          }
+
+          &:active {
+            border-bottom: 2px solid hsl(29, 100%, 40%);
+          }
+        }
+      }
+    }
+  }
+}
