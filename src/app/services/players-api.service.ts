@@ -1,7 +1,9 @@
-import { Player } from './../models/player.interface';
+
+import { Player } from '../models/player.interface';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,8 @@ export class PlayersApiService {
   url = `https://www.balldontlie.io/api/v1/players`;
   playersArray: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
 
   // getPlayers(): Observable<Player[]> {
@@ -23,7 +26,7 @@ export class PlayersApiService {
   // };
 
   getPlayers(): Observable<Player[]> {
-    return this.http.get<Player[]>(this.url).pipe(Map(res => res[0]))
+    return this.http.get<{ data: Player[], meta: any }>(this.url)
+      .pipe(map(res => Object.values(res)[0]));
   }
-};
-
+}

@@ -1,7 +1,6 @@
-import { Team } from './Team';
+import { Team } from './team';
 
 export interface MatchScore {
-
     id: number;
     date: string;
     home_team: Team;
