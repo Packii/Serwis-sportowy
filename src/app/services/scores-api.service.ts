@@ -1,9 +1,9 @@
 import { MatchScore } from './../models/match-score';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+
 
 
 @Injectable({
@@ -13,7 +13,8 @@ import { map } from 'rxjs/operators';
 export class ScoresApiService {
 
   url = 'https://www.balldontlie.io/api/v1/games';
-  isOpened: boolean;
+  private _dataSource = new BehaviorSubject<boolean>(false);
+  // private _moarDataSource = new BehaviorSubject<Object>({});
 
   constructor(private http: HttpClient) { }
 
@@ -21,11 +22,17 @@ export class ScoresApiService {
     return this.http.get<{ data: MatchScore[], meta: any }>(this.url)
       .pipe(map(res => Object.values(res)[0]));
   }
-  private _dataSource = new Subject<boolean>();
-  sendData(data: boolean) {
-    return this._dataSource.next(this.isOpened);
-  }
+
+  sendData(isOpened: boolean) {
+    return this._dataSource.next(isOpened);
+  };
   getData(): Observable<boolean> {
     return this._dataSource.asObservable();
   }
+  // sendMoarData(score: Object) {
+  //   return this._moarDataSource.next(score);
+  // };
+  // getMoarData(): Observable<Object> {
+  //   return this._moarDataSource.asObservable();
+  // }
 }

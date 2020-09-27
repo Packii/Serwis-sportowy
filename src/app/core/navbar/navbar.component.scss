@@ -1,10 +1,49 @@
+@import './../../../scss/variables';
+@import './../../../scss/mixins';
+
+
 nav {
+  display: flex !important;
   position: fixed;
   top: 0;
   height: 100px;
   width: 100%;
   background: black;
   border-bottom: 1px solid rgba(204, 99, 0, .3);
+
+  .hamburger {
+    height: 100%;
+    width: 100px;
+    background-color: transparent;
+    cursor: pointer;
+
+    .inner {
+      width: 50px;
+      height: 30px;
+      margin: 0 auto;
+
+      .btn-ele {
+        background-color: rgba(204, 99, 0, .6);
+        height: 3px;
+        width: 100%;
+        border-radius: 25%;
+        transition: all .8s;
+      }
+
+      .change.ele1 {
+
+        transform: rotateZ(-405deg) translate(-8px, 6px);
+      }
+
+      .change.ele2 {
+        opacity: 0;
+      }
+
+      .change.ele3 {
+        transform: rotateZ(405deg) translate(-8px, -6px)
+      }
+    }
+  }
 
   a {
     line-height: 98px;
@@ -14,15 +53,16 @@ nav {
     text-align: center;
   }
 
-  #logo {
-    padding: 0 50px;
-    transition: .2s;
-
-  }
-
-  div {
+  div.list {
     display: inline-block;
     min-width: 70%;
+    transform: scaleX(0);
+    transition: 1s;
+    transform-origin: left;
+
+    &.changed {
+      transform: scaleX(1);
+    }
 
     ul {
 

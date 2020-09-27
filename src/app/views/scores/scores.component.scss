@@ -1,13 +1,18 @@
 app-score {
   display: block;
-  margin: 1px auto;
-  cursor: pointer;
+  margin: 15px auto;
+  // cursor: pointer;
   width: 80vw;
-  background-color: rgba(0, 0, 0, 0.288);
+  // background-color: rgba(0, 0, 0, 0.288);
+  transition: .3s;
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 0);
-  }
+  // &:hover {
+  //   background-color: rgba(0, 0, 0, 0);
+  // }
+
+  // &.opened {
+  //   background-color: rgba(0, 0, 0, 0);
+  // }
 }
 
 p {

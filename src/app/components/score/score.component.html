@@ -1,4 +1,5 @@
-<div class="panel d-flex">
+<div (click)="toggleOpened()" class="panel d-flex" [ngClass]="{'toggled': isOpened === true}">
+  <!-- <div class="panel d-flex" (click)="onClicked(score)"> -->
   <div class="team home">
     <img src="https://picsum.photos/70?random={{score.home_team.id}}" alt="">
     <div>
@@ -7,12 +8,14 @@
     </div>
   </div>
   <div class="versus flex-fill">vs</div>
-  <div class="team visitor">
+  <div class=" team visitor">
     <img src="https://picsum.photos/70?random={{score.visitor_team.id}}" alt="">
     <div>
       <p class="name">{{score.visitor_team.full_name}}</p>
       <p class="score">{{score.visitor_team_score}}</p>
-      <!-- <p *ngIf="{{isOpened}}">asdasdasdas</p> -->
     </div>
   </div>
+</div>
+<div (click)="toggleOpened()" [ngClass]="{'opened': isOpened === true}" class="closed">
+  <app-players></app-players>
 </div>

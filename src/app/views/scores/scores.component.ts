@@ -13,17 +13,21 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 export class ScoresComponent implements OnInit {
   scores: Observable<MatchScore[]>;
+  isOpened: boolean = false;
+  scoreData: Observable<MatchScore>;
 
   constructor(
     private scoresApiService: ScoresApiService) { }
 
   ngOnInit(): void {
     this.scores = this.scoresApiService.getScores();
+    // this.scoreData = this.scoresApiService.getMoarData();
   }
 
-  isOpened: boolean = false;
-  toggleOpened($event) {
-    this.isOpened = !this.isOpened;
-    this.scoresApiService.sendData(this.isOpened);
-  }
+  // toggleOpened($event) {
+  //   this.isOpened = !this.isOpened;
+  //   this.scoresApiService.sendData(this.isOpened);
+  //   // this.scoreData = $event;
+  //   // this.scoresApiService.sendMoarData(this.score)
+  // }
 }

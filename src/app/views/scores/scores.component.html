@@ -1,4 +1,15 @@
+<!-- <div *ngIf="(scores| async) as scores">
+  <app-score (click)="toggleOpened(score)" *ngFor="let score of scores" [score]="score"
+    [ngClass]="{'opened': isOpened === true}">
+  </app-score>
+</div> -->
 <div *ngIf="(scores| async) as scores">
-  <app-score (click)="toggleOpened($event)" *ngFor="let score of scores" [score]="score">
+  <app-score *ngFor="let score of scores" [score]="score">
   </app-score>
 </div>
+
+<!-- 
+<div *ngIf="(scores| async) as scores">
+  <app-score (onSelect)="toggleOpened($event)" *ngFor="let score of scores" [score]="score">
+  </app-score>
+</div> -->

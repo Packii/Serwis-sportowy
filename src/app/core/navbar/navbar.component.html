@@ -1,6 +1,14 @@
-<nav navbar sticky-top>
-  <a id="logo">asd</a>
-  <div>
+<nav navbar sticky-top d-flex flex-row>
+  <div (click)="toggleChange()" class="hamburger d-flex flex-column justify-content-around">
+    <div class="inner d-flex flex-column justify-content-around">
+      <div class=" btn-ele ele1" [ngClass]="{'change': isChanged === true}"></div>
+      <div class="btn-ele ele2" [ngClass]="{'change': isChanged === true}"></div>
+      <div class="btn-ele ele3" [ngClass]="{'change': isChanged === true}"></div>
+    </div>
+  </div>
+
+
+  <div [ngClass]="{'changed': isChanged === true}" class="list">
     <ul class="d-flex flex-row">
       <li class="flex-fill">
         <a [routerLink]="['/news']" [routerLinkActive]="['active']">News</a>

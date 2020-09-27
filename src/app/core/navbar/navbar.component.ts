@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   constructor() { }
+  isChanged: boolean = false;
 
   ngOnInit(): void {
+  }
+
+  toggleChange() {
+    this.isChanged = !this.isChanged;
   }
 
 }
