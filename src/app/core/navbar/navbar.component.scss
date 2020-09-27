@@ -10,40 +10,50 @@ nav {
   width: 100%;
   background: black;
   border-bottom: 1px solid rgba(204, 99, 0, .3);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: 1s;
 
-  .hamburger {
-    height: 100%;
-    width: 100px;
-    background-color: transparent;
-    cursor: pointer;
-
-    .inner {
-      width: 50px;
-      height: 30px;
-      margin: 0 auto;
-
-      .btn-ele {
-        background-color: rgba(204, 99, 0, .6);
-        height: 3px;
-        width: 100%;
-        border-radius: 25%;
-        transition: all .8s;
-      }
-
-      .change.ele1 {
-
-        transform: rotateZ(-405deg) translate(-8px, 6px);
-      }
-
-      .change.ele2 {
-        opacity: 0;
-      }
-
-      .change.ele3 {
-        transform: rotateZ(405deg) translate(-8px, -6px)
-      }
-    }
+  &.changed {
+    transform: scaleX(1);
   }
+
+  // .hamburger {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 100px;
+  //   background-color: transparent;
+  //   cursor: pointer;
+
+  //   .inner {
+  //     width: 50px;
+  //     height: 30px;
+  //     margin: 0 auto;
+
+  //     .btn-ele {
+  //       background-color: rgba(204, 99, 0, .6);
+  //       height: 3px;
+  //       width: 100%;
+  //       border-radius: 25%;
+  //       transition: all .8s;
+  //     }
+
+  //     .change.ele1 {
+
+  //       transform: rotateZ(-405deg) translate(-8px, 6px);
+  //     }
+
+  //     .change.ele2 {
+  //       opacity: 0;
+  //     }
+
+  //     .change.ele3 {
+  //       transform: rotateZ(405deg) translate(-8px, -6px)
+  //     }
+  //   }
+  // }
 
   a {
     line-height: 98px;
@@ -58,7 +68,7 @@ nav {
     min-width: 70%;
     transform: scaleX(0);
     transition: 1s;
-    transform-origin: left;
+    transform-origin: right;
 
     &.changed {
       transform: scaleX(1);
@@ -89,6 +99,45 @@ nav {
           }
         }
       }
+    }
+  }
+}
+
+
+div.hamburger.d-flex {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1000;
+
+  .inner {
+    width: 50px;
+    height: 30px;
+    margin: 0 auto;
+
+    .btn-ele {
+      background-color: rgba(204, 99, 0, .6);
+      height: 3px;
+      width: 100%;
+      border-radius: 25%;
+      transition: all .8s;
+    }
+
+    .change.ele1 {
+
+      transform: rotateZ(-405deg) translate(-8px, 6px);
+    }
+
+    .change.ele2 {
+      opacity: 0;
+    }
+
+    .change.ele3 {
+      transform: rotateZ(405deg) translate(-8px, -6px)
     }
   }
 }
